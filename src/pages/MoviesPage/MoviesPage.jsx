@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Field, Formik, Form } from 'formik';
 import s from './MoviesPage.module.css';
+// import MovieDetailsPage from '../MovieDetailsPage/MovieDetailsPage';
 
 const MoviesPage = () => {
   useEffect(() => {
@@ -11,10 +12,11 @@ const MoviesPage = () => {
     <div className={s.container}>
       <Formik>
         <Form className={s.form}>
-          <Field></Field>
+          <Field placeholder='Search movie by name'></Field>
           <button>Search</button>
         </Form>
       </Formik>
+      {/* <MovieDetailsPage /> */}
     </div>
   );
 };

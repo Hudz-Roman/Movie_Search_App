@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import s from './HomePage.module.css';
+import MovieList from '../../components/MovieList/MovieList';
 
-const HomePage = () => {
+const HomePage = ({ movies }) => {
   useEffect(() => {
     document.title = 'Home';
   }, []);
@@ -9,6 +10,7 @@ const HomePage = () => {
   return (
     <div className={s.container}>
       <h2>Trending today</h2>
+      <MovieList movies={movies} />
     </div>
   );
 };
