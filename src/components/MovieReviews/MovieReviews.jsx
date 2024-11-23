@@ -1,5 +1,9 @@
 const MovieReviews = () => {
-  return <></>;
+  return (
+    <div>
+      <span>Reviews</span>
+    </div>
+  );
 };
 
 export default MovieReviews;

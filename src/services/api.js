@@ -15,16 +15,14 @@ export const fetchTrendingMovies = async () => {
     return resp.data.results;
   } catch (error) {
     console.error(error);
-    throw error;
   }
 };
 
-// export const fetchMovieInfo = async (id) => {
-//   try {
-//     const resp = await axios.get(`/movie/${id}`, options);
-//     return resp.data.results;
-//   } catch (error) {
-//     console.error(error);
-//     throw error;
-//   }
-// };
+export const fetchMovieInfo = async (id) => {
+  try {
+    const resp = await axios.get(`/movie/${id}`, options);
+    return resp.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
