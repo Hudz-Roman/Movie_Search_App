@@ -11,7 +11,7 @@ const options = {
 
 export const fetchTrendingMovies = async () => {
   try {
-    const resp = await axios.get('/trending/movie/day?language=en-US', options);
+    const resp = await axios.get('/trending/movie/day', options);
     return resp.data.results;
   } catch (error) {
     console.error(error);
@@ -22,6 +22,33 @@ export const fetchMovieInfo = async (id) => {
   try {
     const resp = await axios.get(`/movie/${id}`, options);
     return resp.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const fetchSearch = async (query) => {
+  try {
+    const resp = await axios.get(`/search/movie?query=${query}`, options);
+    return resp.data.results;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const fetchCastByMovieId = async (id) => {
+  try {
+    const resp = await axios.get(`movie/${id}/credits`, options);
+    return resp.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const fetchReviewByMovieId = async (id) => {
+  try {
+    const resp = await axios.get(`movie/${id}/reviews`, options);
+    return resp.data.results;
   } catch (error) {
     console.error(error);
   }

@@ -1,0 +1,15 @@
+.cast_wrapper {
+  margin: 10px 0 0 50px;
+}
+
+.cast_item {
+  display: flex;
+  gap: 25px;
+  margin-top: 15px;
+}
+
+.cast_info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

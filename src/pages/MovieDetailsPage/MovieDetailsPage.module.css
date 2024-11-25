@@ -17,3 +17,12 @@
 .btn {
   margin: 20px 0 10px 50px;
 }
+
+.btn_link {
+  text-decoration: none;
+  color: black;
+}
+
+.susp {
+  text-align: center;
+}
