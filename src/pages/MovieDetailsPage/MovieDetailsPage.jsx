@@ -1,4 +1,3 @@
-import s from './MovieDetailsPage.module.css';
 import { useState, useEffect, Suspense } from 'react';
 import {
   useParams,
@@ -8,6 +7,7 @@ import {
   Outlet,
 } from 'react-router-dom';
 import { fetchMovieInfo } from '../../services/api';
+import s from './MovieDetailsPage.module.css';
 
 const MovieDetailsPage = () => {
   const [movie, setMovie] = useState([]);

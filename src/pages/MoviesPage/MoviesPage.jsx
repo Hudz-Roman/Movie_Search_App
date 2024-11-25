@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Field, Formik, Form } from 'formik';
-import s from './MoviesPage.module.css';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { fetchSearch } from '../../services/api';
 import MovieList from '../../components/MovieList/MovieList';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import s from './MoviesPage.module.css';
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);

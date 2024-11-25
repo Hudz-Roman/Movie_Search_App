@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
-import s from './App.module.css';
 import { FallingLines } from 'react-loader-spinner';
+import s from './App.module.css';
 
 const Navigation = lazy(() => import('./Navigation/Navigation'));
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));

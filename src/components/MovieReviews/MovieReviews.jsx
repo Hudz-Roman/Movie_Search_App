@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
-import { fetchReviewByMovieId } from '../../services/api';
 import { useEffect, useState } from 'react';
+import { fetchReviewByMovieId } from '../../services/api';
 import s from './MovieReviews.module.css';
 
 const MovieReviews = () => {
