@@ -21,22 +21,26 @@ const MovieCast = () => {
 
   return (
     <ul className={s.cast_wrapper}>
-      {casts.map((cast) => (
-        <li key={cast.id} className={s.cast_item}>
-          {!cast.profile_path ? (
-            <span>No image</span>
-          ) : (
-            <img
-              src={`https://image.tmdb.org/t/p/w200/${cast.profile_path}`}
-              alt={`${cast.name} picture`}
-            />
-          )}
-          <div className={s.cast_info}>
-            <p>{cast.name}</p>
-            <p>Character: {cast.character}</p>
-          </div>
-        </li>
-      ))}
+      {casts.length > 0 ? (
+        casts.map((cast) => (
+          <li key={cast.id} className={s.cast_item}>
+            {!cast.profile_path ? (
+              <span>No image</span>
+            ) : (
+              <img
+                src={`https://image.tmdb.org/t/p/w200/${cast.profile_path}`}
+                alt={`${cast.name} picture`}
+              />
+            )}
+            <div className={s.cast_info}>
+              <p>{cast.name}</p>
+              <p>Character: {cast.character}</p>
+            </div>
+          </li>
+        ))
+      ) : (
+        <p>No info about cast</p>
+      )}
     </ul>
   );
 };

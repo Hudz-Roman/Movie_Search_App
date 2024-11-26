@@ -1,11 +1,5 @@
-import { useState, useEffect, Suspense } from 'react';
-import {
-  useParams,
-  useLocation,
-  useNavigate,
-  Link,
-  Outlet,
-} from 'react-router-dom';
+import { useState, useEffect, Suspense, useRef } from 'react';
+import { useParams, useLocation, Link, Outlet } from 'react-router-dom';
 import { fetchMovieInfo } from '../../services/api';
 import s from './MovieDetailsPage.module.css';
 
@@ -13,15 +7,7 @@ const MovieDetailsPage = () => {
   const [movie, setMovie] = useState([]);
   const { movieId } = useParams();
   const location = useLocation();
-  const navigate = useNavigate();
-
-  const goBack = () => {
-    if (location.state && location.state.from) {
-      navigate(location.state.from);
-    } else {
-      navigate(-1);
-    }
-  };
+  const goBackRef = useRef(location.state ?? '/movies');
 
   useEffect(() => {
     const getMovieInfo = async () => {
@@ -38,9 +24,9 @@ const MovieDetailsPage = () => {
 
   return (
     <div>
-      <button className={s.btn} onClick={goBack}>
+      <Link className={s.btn} to={goBackRef.current}>
         Go back
-      </button>
+      </Link>
       <div className={s.container}>
         {!movie.poster_path ? (
           <span>No poster</span>
